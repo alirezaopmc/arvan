@@ -11,6 +11,12 @@ type HttpProxy struct {
 	Headers http.Header
 }
 
+func NewHttpProxy() *HttpProxy {
+	return &HttpProxy{
+		Headers: make(http.Header),
+	}
+}
+
 func (hp *HttpProxy) AddHeader(key, value string) {
 	hp.Headers.Add(key, value)
 }
